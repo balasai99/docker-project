@@ -26,14 +26,17 @@ This project provides a Docker container that periodically generates reports by 
 
 2. Navigate to the project directory:
 
+   '''bash
    cd docker-project.git
 
 3. Build the Docker image:
 
+   '''bash
    docker build -t docker-project .
 
-4. Run the Docker container:
+5. Run the Docker container:
 
+   '''bash
    docker run --rm -v /path/to/reports:/reports docker-project
 
    This command runs the container, which executes the Python script, generates the report, saves it in the reports directory on your host machine, and then stops.
@@ -47,10 +50,12 @@ To schedule the container to run periodically, use cron
 
 1. Edit your crontab:
 
+   '''bash
    crontab -e
 
 2. Add a cron job to run the Docker container periodically:
 
+   '''bash
    0 0 * * * docker run --rm -v /path/to/reports:/reports docker-project
 
    Replace /path/to/reports with the actual path where you want the reports to be saved.
