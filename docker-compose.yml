@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  report-generator:
+    build: .
+    container_name: report_generator
+    volumes:
+      - ./reports:/reports
